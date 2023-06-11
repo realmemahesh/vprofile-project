@@ -13,19 +13,19 @@ services:
       MYSQL_ROOT_PASSWORD: "admin123"
   vprocache01:
     image: memcached
-    port: 
+    ports: 
       - "11211:11211"
   vprocache02:
     image: memcached
-    port:
+    ports:
       - "11211:11211"
   vpromq01:
     image: rabbitmq
-    port: 
+    ports: 
       - "15672:15672"
-    env: 
-      - "RABBITMQ_DEFAULT_USER=guest"
-      - "RABBITMQ_DEFAULT_PASS=guest"
+    environment: 
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
   vprosearch01:
     image: elasticsearch
   vproapp:
